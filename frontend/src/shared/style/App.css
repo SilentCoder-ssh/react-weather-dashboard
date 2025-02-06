@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+  color: white;
+}
+
+@font-face {
+  font-family: "Montserrat Alternates";
+  src: url("src/shared/style/font/MontserratAlternates-Regular.ttf")
+    format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Source Code Pro";
+  src: url("src/shared/style/font/SourceCodePro-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+h1,
+nav,
+#p-header,
+h2,
+button,
+#clock,
+footer {
+  font-family: "Montserrat Alternates", serif;
+}
+
+body {
+  font-family: "Source Code Pro", serif;
+}
+
+tr:nth-child(odd) {
+  background-color: rgba(2, 2, 2, 0.484) !important;
+}
+
+#text-label {
+  border-left: solid 2px white;
+}

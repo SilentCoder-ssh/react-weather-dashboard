@@ -5,7 +5,6 @@ import Nav from './shared/components/nav';
 import Footer from './shared/components/footer';
 
 
-
 function App() {
   const [] = useState(0)
 
@@ -20,3 +19,4 @@ function App() {
 }
 
 export default App
+ 

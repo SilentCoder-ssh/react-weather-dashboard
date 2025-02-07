@@ -43,16 +43,17 @@ export default function Head() {
         id="container-header"
         className="w-full pl-3 pr-3 flex justify-between items-center"
       >
-        <div id="container-label" className="flex flex-col items-center">
-          <div id="container-logo" className="flex w-62 pb-0.8">
-            <img
-              src="/src/shared/style/icon/terre.png"
-              alt="icon"
-              className="w-4 h-4 mr-1 filter invert"
-            />
-            <div id="text-label" className="text-left w-76 pl-1">
-              <h1 className="text-3 font-bold">Dashboard Météo</h1>
-            </div>
+        <div
+          id="container-logo"
+          className="flex justify-center items-center w-auto"
+        >
+          <img
+            src="/src/shared/style/icon/terre.png"
+            alt="icon"
+            className="w-4 h-4 mr-1 filter invert"
+          />
+          <div id="text-label" className="text-left pl-1 pr-1">
+            <h1 className="text-3 font-bold">Dashboard Météo</h1>
           </div>
         </div>
 

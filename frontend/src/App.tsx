@@ -3,6 +3,7 @@ import './shared/style/App.css'
 import Head from './shared/components/head';
 import Nav from './shared/components/nav';
 import Footer from './shared/components/footer';
+import Current from './shared/components/current';
 
 
 function App() {
@@ -12,7 +13,7 @@ function App() {
     <>
       <Head />
       <Nav />
-
+      <Current />
       <Footer />
     </>
   );

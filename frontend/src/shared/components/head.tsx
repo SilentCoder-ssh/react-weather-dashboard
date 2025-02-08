@@ -1,12 +1,9 @@
 import { useState, useEffect } from "react";
 import InputComponent from "./input";
 
+
 export default function Head() {
   let [time, setTime] = useState("");
-
-
-  let [cityName, setCityName] = useState("");
-
 
   useEffect(() => {
     const padS = (element: any) => String(element).padStart(2, "0");
@@ -62,7 +59,7 @@ export default function Head() {
           </div>
         </div>
 
-        <InputComponent setCityName={cityName}/>
+        <InputComponent/>
 
         <span id="date-live">
           <div>

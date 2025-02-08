@@ -68,6 +68,8 @@ export interface WeatherCurrentData {
   forecast: WeatherForecast;
 }
 
+export type WeatherProps =  "location" | "current" | "forecast" 
+
 export interface DailyWeather {
   avghumidity: number;
   avgtemp_c: number;

@@ -1,43 +1,21 @@
 import { create } from "zustand";
-import { WeatherCurrentData } from "../../types/types";
+import { WeatherCurrentData, WeatherProps } from "../../types/types";
+import { searchData } from "../../../utils/get-data";
 
 interface UseStore {
-  currentWeather: WeatherCurrentData | null;
-  setCurrentWeather: (cityName: string) => Promise<void>;
+  weather: WeatherCurrentData | null;
+  setWeather: (weatherProps: WeatherProps, cityName: string) => Promise<void>;
+  setCityName: (name: string) => void;
+  cityName: string;
 }
 
-const findData = async (Time: string, cityName: string): Promise<any> => {
-  const apiKey = import.meta.env.VITE_API_KEY;
-  const racine = "https://api.weatherapi.com/v1";
-  const url = `${racine}/${Time}.json?key=${apiKey}&lang=fr&q=${cityName}`;
-  let data;
-
-  try {
-    const response: Response = await fetch(url);
-
-    if (!response.ok) {
-      throw new Error(`Erreur HTTP: ${response.status}`);
-    }
-
-    data = await response.json();
-    //console.log("Données reçues : ", data);
-  } catch (error) {
-    console.error("Erreur lors de la récupération des données : ", error);
-    throw error;
-  }
-
-  return data;
-};
-
 const useStore = create<UseStore>((set) => ({
-  currentWeather: null,
-
-  setCurrentWeather: async (cityName: string) => {
-    const currentData = await findData("current", cityName)
-
-    set({ currentWeather: currentData })
+  weather: null,
+  cityName: "",
+  setCityName: (name: string) => set({ cityName: name }),
+  setWeather: async (weatherProps: WeatherProps, cityName: string) => {
+    await searchData(weatherProps, cityName, set);
   },
 }));
 
-
-export default useStore
+export default useStore; 

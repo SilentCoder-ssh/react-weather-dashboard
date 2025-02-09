@@ -1,7 +1,7 @@
 * {
   margin: 0;
   padding: 0;
-  color: white;
+  color: #ECEFF4;
 }
 
 @font-face {
@@ -12,8 +12,8 @@
   font-style: normal;
 }
 @font-face {
-  font-family: "Source Code Pro";
-  src: url("src/shared/style/font/SourceCodePro-Regular.ttf") format("truetype");
+  font-family: "Poppins";
+  src: url("src/shared/style/font/Poppins-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -22,6 +22,7 @@ h1,
 nav,
 #p-header,
 h2,
+h3,
 button,
 #clock,
 footer {
@@ -29,7 +30,8 @@ footer {
 }
 
 body {
-  font-family: "Source Code Pro", serif;
+  font-family: "Poppins", serif;
+  font-size: 18px;
 }
 
 tr:nth-child(odd) {
@@ -38,4 +40,11 @@ tr:nth-child(odd) {
 
 #text-label {
   border-left: solid 1px white;
+}
+
+.weather-info > span, 
+.weather-info > strong, 
+.weather-info > img {
+  display: flex;
+  align-items: center;
 }

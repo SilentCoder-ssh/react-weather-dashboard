@@ -40,14 +40,14 @@ export default function Head() {
   }, []);
 
   return (
-    <header className="text-center h-9 bg-gray-800 shadow-lg w-full flex fixed justify-center items-center z-50">
+    <header className="text-center h-9 bg-#2E3440 shadow-lg top-0 w-full flex fixed justify-center items-center z-50">
       <div
         id="container-header"
         className="w-full pl-3 pr-3 flex justify-between items-center"
       >
         <div
           id="container-logo"
-          className="flex justify-center items-center w-auto"
+          className="flex justify-center items-center w-auto cursor-pointer"
         >
           <img
             src="/src/shared/style/icon/terre.png"
@@ -57,9 +57,10 @@ export default function Head() {
           <div id="text-label" className="text-left pl-1 pr-1">
             <h1 className="text-3 font-bold">Dashboard Météo</h1>
           </div>
+          <a href="http://localhost:5174/"></a>
         </div>
 
-        <InputComponent/>
+        <InputComponent />
 
         <span id="date-live">
           <div>

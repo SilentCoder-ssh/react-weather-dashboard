@@ -6,10 +6,9 @@ const InputComponent = () => {
   const handleOnKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
       const city = e.currentTarget.value.trim();
-      if (city) {
+      if (city && city.length > 2) {
         setCity(city);
       }
-      console.log("Ville choisie :", city);
     }
   };
 
@@ -21,7 +20,7 @@ const InputComponent = () => {
           id="location-input"
           placeholder="Entrez une ville..."
           data-search="location"
-          className="flex-1 p-1 bg-[rgba(2,2,2,0.484)] border-none outline-none text-white focus:ring focus:ring-blue-500 focus:bg-[rgba(2,2,2,0.484)] text-3 rounded-1"
+          className="flex-1 p-1 bg-[rgba(2,2,2,0.484)] border-none outline-none focus:ring border-[#00BFFF] focus:ring-blue-500 focus:bg-[rgba(2,2,2,0.484)] text-3 rounded-1"
           onKeyDown={handleOnKeyDown}
         />
       </div>

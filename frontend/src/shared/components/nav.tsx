@@ -1,10 +1,30 @@
+import React from "react";
+import useStore from "./context/store";
+
 export default function Nav() {
+  const weather = useStore((state) => state.weather);
+  const setActiveMode = useStore((state) => state.setActiveMode);
+
+  const handleOnClick = (e: React.MouseEvent<HTMLSpanElement>) => {
+    const value = e.currentTarget.dataset.value;
+    if (!weather) return;
+    if (value === "current") {
+      setActiveMode(value);
+    } else if (value === "forecast-hour") {
+      setActiveMode(value);
+    } else if (value === "forecast-day") {
+      setActiveMode(value);
+    }
+  };
+
   return (
     <nav className="bg-#2E3440 fixed h-full top-0 left-0 w-12 flex justify-center py-4 shadow-lg z-40">
       <div className="flex flex-col items-center justify-center space-y-12 h-full">
         <a
+          onClick={handleOnClick}
           id="current-conditions-nav"
           className="cursor-pointer hover:text-gray-200 flex flex-col items-center"
+          data-value="current"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -22,9 +42,12 @@ export default function Nav() {
           </svg>
           <span className="text-2 mt-1">Actuelle</span>
         </a>
+
         <a
           id="hourly-forecast-nav"
           className="cursor-pointer hover:text-gray-200 flex flex-col items-center"
+          onClick={handleOnClick}
+          data-value="forecast-hour"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -42,9 +65,12 @@ export default function Nav() {
           </svg>
           <span className="text-2 mt-1">Horaires</span>
         </a>
+
         <a
           id="tomorrow-forecast-nav"
           className="cursor-pointer hover:text-gray-200 flex flex-col items-center"
+          onClick={handleOnClick}
+          data-value="forecast-day"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

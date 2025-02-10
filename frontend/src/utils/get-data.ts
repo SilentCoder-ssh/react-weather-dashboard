@@ -1,11 +1,14 @@
-import { WeatherCurrentData } from "./../shared/types/types";
-import type { WeatherProps } from "../shared/types/types";
+import type {
+  WeatherData,
+  WeatherDatas,
+  WeatherProps,
+} from "../shared/types/types";
 
 export const apiKey = import.meta.env.VITE_API_KEY;
 export const racine = "https://api.weatherapi.com/v1";
 
 interface WeatherStore {
-  weather: WeatherCurrentData | null;
+  weather: WeatherDatas | null; // Changé WeatherData en WeatherDatas
   cityName: string;
 }
 
@@ -15,10 +18,11 @@ type SetState = (
     | ((state: WeatherStore) => Partial<WeatherStore>)
 ) => void;
 
-const getData = async (
+// Pas besoin de useCallback ici car c'est une fonction utilitaire
+export const getData = async (
   time: WeatherProps,
   cityName: string
-): Promise<WeatherCurrentData> => {
+): Promise<WeatherDatas> => {
   const url = `${racine}/${time}.json?key=${apiKey}&lang=fr&q=${encodeURIComponent(
     cityName
   )}`;
@@ -28,15 +32,8 @@ const getData = async (
     if (!response.ok) {
       throw new Error(`Erreur HTTP: ${response.status}`);
     }
-
     const data = await response.json();
-    const formattedData: WeatherCurrentData = {
-      location: data.location,
-      current: data.current,
-      forecast: data.forecast,
-    };
-
-    return formattedData;
+    return data;
   } catch (error) {
     console.error("Erreur lors de la récupération des données :", error);
     throw error;
@@ -45,14 +42,12 @@ const getData = async (
 
 export const searchData = async (
   weatherProps: WeatherProps,
-  cityName: string,
-  set: SetState
-) => {
+  cityName: string
+): Promise<WeatherDatas | null> => {
   try {
-    const weatherData = await getData(weatherProps, cityName);
-    set({ weather: weatherData });
+    return await getData(weatherProps, cityName);
   } catch (error) {
     console.error("Erreur lors de la mise à jour de la météo :", error);
-    throw error;
+    return null; // Retourne null en cas d'erreur plutôt que de propager l'erreur
   }
 };

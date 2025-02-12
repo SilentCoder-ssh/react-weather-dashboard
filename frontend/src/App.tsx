@@ -1,7 +1,7 @@
 import "./shared/style/App.css";
-import Head from "./shared/components/head";
-import Nav from "./shared/components/nav";
-import Footer from "./shared/components/footer";
+import Head from "./shared/components/menu/head";
+import Nav from "./shared/components/menu/nav";
+import Footer from "./shared/components/menu/footer";
 import Central from "./shared/components/central";
 import useStore from "./shared/components/context/store";
 import { useEffect } from "react";

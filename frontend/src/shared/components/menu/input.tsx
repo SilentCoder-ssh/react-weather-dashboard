@@ -1,4 +1,4 @@
-import useStore from "../components/context/store";
+import useStore from "../context/store";
 
 const InputComponent = () => {
   const setCity = useStore((state) => state.setCityName);
@@ -20,7 +20,7 @@ const InputComponent = () => {
           id="location-input"
           placeholder="Entrez une ville..."
           data-search="location"
-          className="flex-1 p-1 bg-[rgba(2,2,2,0.484)] border-none outline-none focus:ring border-[#00BFFF] focus:ring-blue-500 focus:bg-[rgba(2,2,2,0.484)] text-3 rounded-1"
+          className="flex-1 p-1 bg-[#262624] border-solid outline-none border-[#8B8C81] focus:border-[#8B8C81] hover:border-none text-center text-[2.3vh] h-[4vh] w-[15vw] rounded-1"
           onKeyDown={handleOnKeyDown}
         />
       </div>

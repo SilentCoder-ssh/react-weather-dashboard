@@ -1,5 +1,4 @@
 import type {
-  WeatherData,
   WeatherDatas,
   WeatherProps,
 } from "../shared/types/types";
@@ -7,16 +6,6 @@ import type {
 export const apiKey = import.meta.env.VITE_API_KEY;
 export const racine = "https://api.weatherapi.com/v1";
 
-interface WeatherStore {
-  weather: WeatherDatas | null; // Changé WeatherData en WeatherDatas
-  cityName: string;
-}
-
-type SetState = (
-  partial:
-    | Partial<WeatherStore>
-    | ((state: WeatherStore) => Partial<WeatherStore>)
-) => void;
 
 // Pas besoin de useCallback ici car c'est une fonction utilitaire
 export const getData = async (

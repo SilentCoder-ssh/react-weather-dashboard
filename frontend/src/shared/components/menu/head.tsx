@@ -19,7 +19,7 @@ export default function Head() {
             className="sky-pulse w-[1.5vw] h-[3vh] mr-1 filter invert"
           />
           <div id="text-label" className="text-left pl-1 pr-1">
-            <h1 className="text-[1.8vh] font-bold ml-1">SkyPulse</h1>
+            <h1 className="text-[1.8vh] font-bold ml-3">SkyPulse</h1>
           </div>
           <a href="http://localhost:5174/"></a>
         </div>

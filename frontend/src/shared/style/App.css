@@ -76,6 +76,21 @@ nav > #container-tabs > div > a {
   animation: heartbeat 2s infinite ease-in-out;
   border-radius: 50%;
   padding: 10px;
-  box-shadow: 0 0 15px #8B8C81;
+  box-shadow: 0 0 15px #8b8c81;
   stroke-width: 100%;
+}
+
+#container-tabs a,
+#container-tabs div {
+  width: 100% !important;
+}
+
+#container-tabs {
+  padding: 35px;
+  gap: 30px;
+}
+
+#container-tabs svg {
+  margin-right: 10px;
+  width: 28px !important;
 }

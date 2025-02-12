@@ -18,10 +18,10 @@ export default function Nav() {
   };
 
 return (
-  <nav className="transition-all bg-[#262624] opacity-80 hover:opacity-100 fixed h-70% top-12% transform translate-y-1/12 left-3.5% w-[10%] flex justify-center z-40 border-rounded-3xl">
+  <nav className="transition-all bg-[#262624] opacity-80 hover:opacity-100 fixed top-12% transform translate-y-1/12 left-3.5% flex z-40 border-rounded-3xl">
     <div
       id="container-tabs"
-      className="flex flex-col justify-center space-y-11 h-full w-80%"
+      className="flex flex-col h-full"
     >
       <div className="flex justify-center transition-all hover:stroke-[#F4B400] transition-colors hover:drop-shadow-[0_0_6.7px_#F4B400]">
         <a

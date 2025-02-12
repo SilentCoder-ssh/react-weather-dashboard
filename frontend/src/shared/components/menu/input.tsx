@@ -20,7 +20,7 @@ const InputComponent = () => {
           id="location-input"
           placeholder="Entrez une ville..."
           data-search="location"
-          className="flex-1 p-1 bg-[#262624] border-solid outline-none border-[#8B8C81] focus:border-[#8B8C81] hover:border-none text-center text-[2.3vh] h-[4vh] w-[15vw] rounded-1"
+          className="flex-1 p-1 bg-[#262624] border-solid outline-none border-[#8B8C81] focus:border-[#8B8C81] hover:border-none text-center text-[2.3vh] h-[5vh] w-[25vw] rounded-1"
           onKeyDown={handleOnKeyDown}
         />
       </div>

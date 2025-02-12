@@ -1,6 +1,6 @@
 import useStore from "./context/store";
 import Current from "./current";
-import DayForecast from "./day-forecast";
+import DayForecast from "./tomorrow-forecast";
 import HourlyForecast from "./hourly-forecast";
 
 export default function Central() {

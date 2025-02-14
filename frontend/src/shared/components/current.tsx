@@ -6,14 +6,14 @@ interface CurrentProps {
   location: LocationData;
 }
 
-const Current: React.FC<CurrentProps> = ({ current}) => {
+const Current: React.FC<CurrentProps> = ({ current }) => {
   return (
     <section
       id="current-weather"
       data-section="current"
       className="bg-#2B2F3A p-6 rounded-lg shadow-lg w-70% absolute top-3/5.8 left-1/1.93 transform -translate-x-1/2 -translate-y-1/2"
     >
-      <h3 className="text-3 opacity-80 mt-2">
+      <h3 className="text-3 opacity-75 mt-2">
         ( Date des dernières données :
         <span className="text-2.7 text-blue-400"> {current.last_updated}</span>{" "}
         )

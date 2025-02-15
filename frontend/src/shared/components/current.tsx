@@ -15,7 +15,7 @@ const Current: React.FC<CurrentProps> = ({ current }) => {
     >
       <h3 className="text-3 opacity-75 mt-2">
         ( Date des dernières données :
-        <span className="text-2.7 text-blue-400"> {current.last_updated}</span>{" "}
+        <span className="text-2.7 text-blue-500"> {current.last_updated}</span>{" "}
         )
       </h3>
       <div className="weather-info grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4 items-center justify-items-start">
